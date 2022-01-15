@@ -15,8 +15,11 @@ import Tiere.Vogel;
 
 public class PlanerFabrik {
 
+	// Methode, die die gleichnamige Klasse
+	// des eingegebenen Tieres zurückgibt
 	public Tier getTier(String tierAuswahl) {
 		
+		// Fehleingaben werden bisher nicht korrekt verarbeitet
 		if(tierAuswahl == null) {
 			return null;
 		}else {
@@ -36,11 +39,17 @@ public class PlanerFabrik {
 		return null;
 	}
 	
+	// Methode, die eine Liste an 
+	// passenden Futtersorten-Klassen zurückgibt
 	public ArrayList<Futter> getFutter(String tierAuswahl) {
 		
+		// Temporäre Liste gefüllt mit allen Klassen
+		// die die Futter Klasse implementieren
 		ArrayList<Futter> alleFutterSorten = new ArrayList<Futter>();
+		// Liste mit passendem Futter die am Ende zurückgegeben wird
 		ArrayList<Futter> passendeFutterSorten = new ArrayList<Futter>();
 		
+		// Jedes Futter Objekt wird einmal instanziiert
 		Futter trockenFutter = new Trockenfutter();
 		Futter frischFutter = new Frischfutter();
 		Futter barfFutter = new BARF();
@@ -48,13 +57,14 @@ public class PlanerFabrik {
 		Futter nassFutter = new Nassfutter();
 		
 		// Futter Unter Klassen "suchen" sich die Tiere
+		// für die das Futter geeignet ist
 		trockenFutter.fuerTier();
 		frischFutter.fuerTier();
 		barfFutter.fuerTier();
 		koernerFutter.fuerTier();
 		nassFutter.fuerTier();
 		
-		// Alle Futter Klassen werden der Array Liste hinzugefügt
+		// Alle Futter Objekte werden der temporären Liste hinzugefügt
 		Collections.addAll(
 				alleFutterSorten, trockenFutter,frischFutter,
 				barfFutter,koernerFutter,nassFutter);
@@ -63,7 +73,6 @@ public class PlanerFabrik {
 		// Einzelne Elemente der Futter Unterklasse 
 		// sprich die Tiere die das Futter essen dürfen
 		// werden mit dem eingegebenen Tier verglichen
-		
 		alleFutterSorten.forEach((FutterSorte) ->{
 			FutterSorte.getTierListe().forEach((tier) ->{
 				if(tier.contentEquals(tierAuswahl)) {
@@ -72,8 +81,6 @@ public class PlanerFabrik {
 			});
 		});
 		
-		
-		// Logik um bei jeden Aufruf eine neue Futterklasse zurückzugeben
 		return passendeFutterSorten;
 		
 	}
