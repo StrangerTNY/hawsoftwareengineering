@@ -14,7 +14,7 @@ import Tiere.Tier;
 import Tiere.Vogel;
 
 public class PlanerFabrik {
-
+	
 	// Methode, die die gleichnamige Klasse
 	// des eingegebenen Tieres zurückgibt
 	public Tier getTier(String tierAuswahl) {
@@ -36,6 +36,7 @@ public class PlanerFabrik {
 			
 			}
 		}
+		// Hier könnte ihre Fehlermeldung stehen
 		return null;
 	}
 	
@@ -72,7 +73,8 @@ public class PlanerFabrik {
 		
 		// Einzelne Elemente der Futter Unterklasse 
 		// sprich die Tiere die das Futter essen dürfen
-		// werden mit dem eingegebenen Tier verglichen
+		// werden mit dem vom Nutzer eingegebenen Tier verglichen
+		// und dementsprechend der passenden Futter Sorte Liste hinzugefügt
 		alleFutterSorten.forEach((FutterSorte) ->{
 			FutterSorte.getTierListe().forEach((tier) ->{
 				if(tier.contentEquals(tierAuswahl)) {
@@ -81,6 +83,7 @@ public class PlanerFabrik {
 			});
 		});
 		
+		// passende Futter Sorten werden zurückgegeben
 		return passendeFutterSorten;
 		
 	}

@@ -23,7 +23,7 @@ public class Programmablauf {
 		// Ein Tier wird aus der Fabrik erstellt
 		Tier tier = planerFabrik.getTier(tierEingabe);
 		// passende Futter Liste wird aus Fabrik ermittelt
-		ArrayList<Futter> passendeFutterSorten = planerFabrik.getFutter(tierEingabe);
+		ArrayList<Futter> passendeFutterSorten = planerFabrik.getFutter(tier.getName());
 				
 		// Ausgabe des Tiernamens und der passenden Futtersorten
 		System.out.println("Für dein Haustier "+ tier.getName()+ " eignet sich");
