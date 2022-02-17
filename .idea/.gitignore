@@ -7,7 +7,7 @@
 # Editor-based HTTP Client requests
 /httpRequests/
 
-.metadata
+.metadata/
 bin/
 tmp/
 *.tmp
