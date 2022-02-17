@@ -8,7 +8,6 @@
 /httpRequests/
 
 .metadata
-.metadata/
 bin/
 tmp/
 *.tmp
