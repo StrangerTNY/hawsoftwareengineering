@@ -18,3 +18,4 @@ local.properties
 .settings/
 .loadpath
 .recommenders
+.idea/workspace.xml
