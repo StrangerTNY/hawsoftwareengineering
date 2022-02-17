@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="tier.Katze"/>
+    <fullyQualifiedTypeName name="tier.Maus"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="Tiere.Hund"/>
+    <fullyQualifiedTypeName name="Tiere.Maus"/>
+    <fullyQualifiedTypeName name="Tiere.Katze"/>
+    <fullyQualifiedTypeName name="Futter.Trockenfutter"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="PlanerFabrik"/>
+    <fullyQualifiedTypeName name="Tiere.Tier"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="Futter.Frischfutter"/>
+    <fullyQualifiedTypeName name="Futter.BARF"/>
+    <fullyQualifiedTypeName name="Futter.Koernerfutter"/>
+    <fullyQualifiedTypeName name="Futter.Nassfutter"/>
+    <fullyQualifiedTypeName name="Tiere.Vogel"/>
+    <fullyQualifiedTypeName name="Futter.Futter"/>
+</qualifiedTypeNameHistroy>

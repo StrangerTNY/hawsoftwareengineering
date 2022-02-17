@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+D:\Studium\MS-4\Software Engineering\Projekt\hawsoftwareengineering\.metadata\.plugins\org.eclipse.jdt.core
+321797812.index
+3047413104.index

@@ -1,0 +1,9 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="tier.Tier"><rhs name\="tier.Katze"/></lhs><lhs name\="Tiere.Tier"><rhs name\="Tiere.Maus"/><rhs name\="Tiere.Katze"/><rhs name\="Tiere.Vogel"/></lhs><lhs name\="Futter.Futter"><rhs name\="Futter.Trockenfutter"/><rhs name\="Futter.Frischfutter"/><rhs name\="Futter.BARF"/><rhs name\="Futter.Koernerfutter"/><rhs name\="Futter.Nassfutter"/></lhs></history>
+content_assist_number_of_computers=12
+content_assist_proposals_background=255,255,255
+content_assist_proposals_foreground=0,0,0
+eclipse.preferences.version=1
+org.eclipse.jdt.ui.formatterprofiles.version=21
+spelling_locale_initialized=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true
