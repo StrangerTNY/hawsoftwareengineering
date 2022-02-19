@@ -6,6 +6,7 @@ public class Koernerfutter implements Futter{
 	
 	String name = "Körnerfutter";
 	
+	
 	private static ArrayList<String> fuerTierListe = new ArrayList<String>();
 	
 	// Liste mit Tieren die das Futter essen dürfen wird befüllt
