@@ -8,6 +8,7 @@
 /httpRequests/
 
 .metadata
+.classpath
 bin/
 tmp/
 *.tmp
