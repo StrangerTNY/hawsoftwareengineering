@@ -32,10 +32,9 @@ public class CreatePdf {
 		//eigene Font Namen definieren und in resources hinterlegen
 		resources.put(COSName.getPDFName("HeBo"), PDType1Font.HELVETICA_BOLD);
 		resources.put(COSName.getPDFName("Helv"), PDType1Font.HELVETICA);
-		// anderes Problem: "Cannot read while there is an open stream writer"
 
 		// PDF Vorlage wird geladen
-		PDDocument pdfDocument = PDDocument.load(new File(".\\src\\pdfs\\testPdf.pdf"));
+		PDDocument pdfDocument = PDDocument.load(new File(".\\src\\pdfs\\PdfVorlage.pdf"));
 
 		// Form Füllende Funktionen werden geladen
 		PDDocumentCatalog docCatalog = pdfDocument.getDocumentCatalog();
@@ -56,6 +55,7 @@ public class CreatePdf {
 			PDField friF = (PDField) acroForm.getField("fri");
 			PDField satF = (PDField) acroForm.getField("sat");
 			PDField sunF = (PDField) acroForm.getField("sun");
+			PDField name = (PDField) acroForm.getField("name");
 			
 			((PDTextField) monF).setDefaultAppearance("/HeBo 18 Tf 0 g");
 			((PDTextField) tueF).setDefaultAppearance("/HeBo 18 Tf 0 g");
@@ -64,21 +64,23 @@ public class CreatePdf {
 			((PDTextField) friF).setDefaultAppearance("/HeBo 18 Tf 0 g");
 			((PDTextField) satF).setDefaultAppearance("/HeBo 18 Tf 0 g");
 			((PDTextField) sunF).setDefaultAppearance("/HeBo 18 Tf 0 g");
+			((PDTextField) name).setDefaultAppearance("/HeBo 18 Tf 0 g");
 			//COSDictionary dict = ((PDField) monF).getDictionary();
 			
+			name.setValue("TollerNameHier");
 			monF.setValue(liste.get(0).getName());
 			tueF.setValue(liste.get(1).getName());
 			wedF.setValue(liste.get(2).getName());
 			thuF.setValue(liste.get(0).getName());
 			friF.setValue(liste.get(0).getName());
 			satF.setValue(liste.get(0).getName());
-			sunF.setValue(liste.get(0).getName());
+			sunF.setValue(liste.get(0).getName()+"pustekuchen");
 			
 		}
 
 		// Veränderung wird in neuer Datei gespeichert und geschlossen
 		//		contentStream.close();
-		pdfDocument.save(".\\src\\pdfs\\filledTestPdf4.pdf");
+		pdfDocument.save(".\\src\\pdfs\\filledTestPdf5.pdf");
 		pdfDocument.close();
 
 		// veraltet:

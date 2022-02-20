@@ -121,7 +121,6 @@ public class FoodPage extends JFrame implements ActionListener{
 			// Ausgewählte Futtersorten werden einer Liste hinzugefügt
 			for(int i= 0; i<list.size(); i++) {
 				if(list.get(i).isSelected()) {
-					System.out.println("was gefunden");
 					ausgewaehltesFutter.add(passendeFutterSorten.get(i));
 				}
 			}

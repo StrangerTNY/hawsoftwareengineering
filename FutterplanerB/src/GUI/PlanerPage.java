@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -24,6 +25,7 @@ public class PlanerPage extends JFrame implements ActionListener{
 	ArrayList<Futter> ausgewaehltesFutter;
 	String pet;
 	String petName;
+	CreatePdf pdf = new CreatePdf();
 	
 	// Deklarieren der Objekte Frame, Label, Farben (Hintergrund)
 	JFrame frame = new JFrame();
@@ -31,13 +33,15 @@ public class PlanerPage extends JFrame implements ActionListener{
 	Color purple = new Color (105, 104, 146);
 	Color bri = new Color (140, 150, 180);
 	private JButton download, back;
-	CreatePdf pdf = new CreatePdf();
+	
 	public PlanerPage(String pet, String petName, ArrayList<Futter> Futter) throws IOException {
 		super("Dein Plan");
 		
 		this.pet = pet;
 		this.petName = petName;
+		Collections.shuffle(Futter);
 		this.ausgewaehltesFutter = Futter;
+		
 		JLabel label = new JLabel("<html>Futterplan<br>"+petName+"</html>"); //html Codierung für Umbruch
 		
 		//FrameLayout null
@@ -60,19 +64,17 @@ public class PlanerPage extends JFrame implements ActionListener{
 		label.setFont(new Font(null, Font.PLAIN, 30));
 		panel1.add(label);
 		
+		int lSize = ausgewaehltesFutter.size();
+		
 		//Tabelle - 7 Spalten - X Reihen
 		// TODO Tabelle muss korrekt gefüllt werden (geplant war zufällig)
-		String[][] rec = {
-		         { ausgewaehltesFutter.get(0).getName(), "Steve", "AUS", "A", "B", "C", "D" },
-		         { "2", "Virat", "IND" , "A", "B", "C", "D"},
-		         { "3", "Kane", "NZ" , "A", "B", "C", "D"},
-		         { "4", "David", "AUS" , "A", "B", "C", "D"},
-		         { "5", "Ben", "ENG" , "A", "B", "C", "D"},
-		         { "6", "Eion", "ENG" , "A", "B", "C", "D"},
+		String[][] plan = {
+		         { ausgewaehltesFutter.get(0%lSize).getName(), ausgewaehltesFutter.get(1%lSize).getName(), ausgewaehltesFutter.get(2%lSize).getName(), ausgewaehltesFutter.get(3%lSize).getName(), ausgewaehltesFutter.get(4%lSize).getName(), ausgewaehltesFutter.get(5%lSize).getName(), ausgewaehltesFutter.get(6%lSize).getName() },
+		         { ausgewaehltesFutter.get(3%lSize).getName(), ausgewaehltesFutter.get(4%lSize).getName(), ausgewaehltesFutter.get(5%lSize).getName(), ausgewaehltesFutter.get(6%lSize).getName(), ausgewaehltesFutter.get(7%lSize).getName(), ausgewaehltesFutter.get(8%lSize).getName(), ausgewaehltesFutter.get(9%lSize).getName()}
 		      };
 			// Tabellenheader
 		      String[] header = { "MO", "DI", "MI", "DO", "FR", "SA", "SO"};
-		      JTable table = new JTable(rec, header);
+		      JTable table = new JTable(plan, header);
 		      panel1.add(new JScrollPane(table));
 	
 		
