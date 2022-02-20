@@ -20,7 +20,6 @@ public class PlanerFabrik {
 	// des eingegebenen Tieres zurückgibt
 	public Tier getTier(String tierAuswahl) {
 		
-		// Fehleingaben werden bisher nicht korrekt verarbeitet
 		if(tierAuswahl == null) {
 			return null;
 		}else {

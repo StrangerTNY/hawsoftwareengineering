@@ -60,6 +60,7 @@ public class PlanerPage extends JFrame implements ActionListener{
 		panel1.add(label);
 		
 		//Tabelle - 7 Spalten - X Reihen
+		// TODO Tabelle muss korrekt gefüllt werden (geplant war zufällig)
 		String[][] rec = {
 		         { ausgewaehltesFutter.get(0).getName(), "Steve", "AUS", "A", "B", "C", "D" },
 		         { "2", "Virat", "IND" , "A", "B", "C", "D"},
@@ -75,7 +76,7 @@ public class PlanerPage extends JFrame implements ActionListener{
 	
 		
 		//DL Button
-		download = new JButton("Speichern");
+		download = new JButton("Als PDF speichern");
 		download.setBounds(20,0,70,70);
 		download.setFocusable(false);
 		download.addActionListener(this);
@@ -103,6 +104,8 @@ public class PlanerPage extends JFrame implements ActionListener{
 	}
 	
 	//Actionhandler für PDF-DL und Seitenwechsel
+	// TODO: Es kann bei der Wahl von "Nochmal" bei den bestehenden Informationen zu Problemen führen
+	
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == download) {
 			frame.dispose();

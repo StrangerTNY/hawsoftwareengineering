@@ -129,10 +129,5 @@ public class LandingPage extends JFrame implements ActionListener{
 		}
 		frame.dispose();
 		NamingPage endPage = new NamingPage(choosenAnimal);
-//		if(choosenAnimal != null) {
-//			//PlanerFabrik planerFabrik = new PlanerFabrik();
-//			//Tier tier = planerFabrik.getTier(choosenAnimal);
-			System.out.println(choosenAnimal);
-//		}
 	}
 }
