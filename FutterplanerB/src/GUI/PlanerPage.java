@@ -4,6 +4,7 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -13,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
+import FileIO.CreatePdf;
 import Futter.Futter;
 
 //Anzeige + Download
@@ -29,14 +31,13 @@ public class PlanerPage extends JFrame implements ActionListener{
 	Color purple = new Color (105, 104, 146);
 	Color bri = new Color (140, 150, 180);
 	private JButton download, back;
-	
-	public PlanerPage(String pet, String petName, ArrayList<Futter> Futter) {
+	CreatePdf pdf = new CreatePdf();
+	public PlanerPage(String pet, String petName, ArrayList<Futter> Futter) throws IOException {
 		super("Dein Plan");
 		
 		this.pet = pet;
 		this.petName = petName;
 		this.ausgewaehltesFutter = Futter;
-		
 		JLabel label = new JLabel("<html>Futterplan<br>"+petName+"</html>"); //html Codierung für Umbruch
 		
 		//FrameLayout null
@@ -109,6 +110,12 @@ public class PlanerPage extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == download) {
 			frame.dispose();
+			try {
+				pdf.generatePDF(ausgewaehltesFutter);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			LandingPage endPage = new LandingPage();
 		}
 		else if(e.getSource() == back) {

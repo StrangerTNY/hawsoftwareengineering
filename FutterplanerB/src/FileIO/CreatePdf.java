@@ -2,6 +2,7 @@ package FileIO;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.apache.pdfbox.cos.COSDictionary;
 import org.apache.pdfbox.cos.COSName;
@@ -16,8 +17,16 @@ import org.apache.pdfbox.pdmodel.interactive.form.PDAcroForm;
 import org.apache.pdfbox.pdmodel.interactive.form.PDField;
 import org.apache.pdfbox.pdmodel.interactive.form.PDTextField;
 
+import Futter.Futter;
+
 public class CreatePdf {
-	public static void main(String args[]) throws IOException {
+	ArrayList<Futter> liste = new ArrayList<Futter>();
+	
+//	public CreatePdf (ArrayList<Futter> liste) {
+//		this.liste = liste;
+//	}
+	
+	public void generatePDF(ArrayList<Futter> liste) throws IOException {
 		//eigene Resources erstellen
 		PDResources resources = new PDResources();
 		//eigene Font Namen definieren und in resources hinterlegen
@@ -56,20 +65,20 @@ public class CreatePdf {
 			((PDTextField) satF).setDefaultAppearance("/HeBo 18 Tf 0 g");
 			((PDTextField) sunF).setDefaultAppearance("/HeBo 18 Tf 0 g");
 			//COSDictionary dict = ((PDField) monF).getDictionary();
-
-			monF.setValue("hallo ich bin der Montag");
-			tueF.setValue("und ich bims der dienstag");
-			wedF.setValue("hallo ich bin der Mittwoch");
-			thuF.setValue("und ich bims der Donnerstag");
-			friF.setValue("hallo ich bin der Freitag");
-			satF.setValue("und ich bims der Samstag");
-			sunF.setValue("hallo ich bin der Sontag");
+			
+			monF.setValue(liste.get(0).getName());
+			tueF.setValue(liste.get(1).getName());
+			wedF.setValue(liste.get(2).getName());
+			thuF.setValue(liste.get(0).getName());
+			friF.setValue(liste.get(0).getName());
+			satF.setValue(liste.get(0).getName());
+			sunF.setValue(liste.get(0).getName());
 			
 		}
 
 		// Veränderung wird in neuer Datei gespeichert und geschlossen
 		//		contentStream.close();
-		pdfDocument.save(".\\src\\pdfs\\filledTestPdf3.pdf");
+		pdfDocument.save(".\\src\\pdfs\\filledTestPdf4.pdf");
 		pdfDocument.close();
 
 		// veraltet:

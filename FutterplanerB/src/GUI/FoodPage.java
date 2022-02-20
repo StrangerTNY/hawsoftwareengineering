@@ -7,6 +7,7 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -125,7 +126,12 @@ public class FoodPage extends JFrame implements ActionListener{
 				}
 			}
 			frame.dispose();
-			PlanerPage endPage = new PlanerPage(pet,petName,ausgewaehltesFutter);
+			try {
+				PlanerPage endPage = new PlanerPage(pet,petName,ausgewaehltesFutter);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 	}
 	
