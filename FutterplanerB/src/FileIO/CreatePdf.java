@@ -4,14 +4,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import org.apache.pdfbox.cos.COSDictionary;
 import org.apache.pdfbox.cos.COSName;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDDocumentCatalog;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.PDResources;
-import org.apache.pdfbox.pdmodel.fdf.FDFPage;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.pdfbox.pdmodel.interactive.form.PDAcroForm;
 import org.apache.pdfbox.pdmodel.interactive.form.PDField;
@@ -50,15 +46,14 @@ public class CreatePdf {
 			PDField sunF = (PDField) acroForm.getField("sun");
 			PDField name = (PDField) acroForm.getField("name");
 			
-			((PDTextField) monF).setDefaultAppearance("/HeBo 18 Tf 0.28 0.29 0.43 rg");
-			((PDTextField) tueF).setDefaultAppearance("/HeBo 18 Tf 0.28 0.29 0.43 rg");
-			((PDTextField) wedF).setDefaultAppearance("/HeBo 18 Tf 0.28 0.29 0.43 rg");
-			((PDTextField) thuF).setDefaultAppearance("/HeBo 18 Tf 0.28 0.29 0.43 rg");
-			((PDTextField) friF).setDefaultAppearance("/HeBo 18 Tf 0.28 0.29 0.43 rg");
-			((PDTextField) satF).setDefaultAppearance("/HeBo 18 Tf 0.28 0.29 0.43 rg");
-			((PDTextField) sunF).setDefaultAppearance("/HeBo 18 Tf 0.28 0.29 0.43 rg");
-			((PDTextField) name).setDefaultAppearance("/HeBo 18 Tf 0.28 0.29 0.43 rg");
-			//COSDictionary dict = ((PDField) monF).getDictionary();
+			((PDTextField) monF).setDefaultAppearance("/HeBo 22 Tf 0.28 0.29 0.43 rg");
+			((PDTextField) tueF).setDefaultAppearance("/HeBo 22 Tf 0.28 0.29 0.43 rg");
+			((PDTextField) wedF).setDefaultAppearance("/HeBo 22 Tf 0.28 0.29 0.43 rg");
+			((PDTextField) thuF).setDefaultAppearance("/HeBo 22 Tf 0.28 0.29 0.43 rg");
+			((PDTextField) friF).setDefaultAppearance("/HeBo 22 Tf 0.28 0.29 0.43 rg");
+			((PDTextField) satF).setDefaultAppearance("/HeBo 22 Tf 0.28 0.29 0.43 rg");
+			((PDTextField) sunF).setDefaultAppearance("/HeBo 22 Tf 0.28 0.29 0.43 rg");
+			((PDTextField) name).setDefaultAppearance("/HeBo 42 Tf 0.28 0.29 0.43 rg");
 			
 			int lSize = liste.size();
 			name.setValue(petName);
@@ -73,19 +68,7 @@ public class CreatePdf {
 		}
 
 		// Veränderung wird in neuer Datei gespeichert und geschlossen
-		//		contentStream.close();
-		pdfDocument.save(".\\src\\pdfs\\filledTestPdf5.pdf");
+		pdfDocument.save(".\\src\\pdfs\\filledPdf.pdf");
 		pdfDocument.close();
-
-		// veraltet:
-
-		//		PDDocument pdfdoc = new PDDocument();
-		//		pdfdoc.addPage(new PDPage());
-		//		//path where the PDF file will be store  
-		//		pdfdoc.save(".\\src\\pdfs\\pups2.pdf");
-		//		//prints the message if the PDF is created successfully   
-		//		System.out.println("PDF created");
-		//		//closes the document  
-		//		pdfdoc.close();
 	}
 }
