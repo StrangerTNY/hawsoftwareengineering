@@ -22,11 +22,8 @@ import Futter.Futter;
 public class CreatePdf {
 	ArrayList<Futter> liste = new ArrayList<Futter>();
 	
-//	public CreatePdf (ArrayList<Futter> liste) {
-//		this.liste = liste;
-//	}
 	
-	public void generatePDF(ArrayList<Futter> liste) throws IOException {
+	public void generatePDF(ArrayList<Futter> liste, String petName) throws IOException {
 		//eigene Resources erstellen
 		PDResources resources = new PDResources();
 		//eigene Font Namen definieren und in resources hinterlegen
@@ -40,11 +37,7 @@ public class CreatePdf {
 		PDDocumentCatalog docCatalog = pdfDocument.getDocumentCatalog();
 		PDAcroForm acroForm = docCatalog.getAcroForm();
 		acroForm.setDefaultResources(resources);
-		// Font / Größe soll bestimmt werden erzeugt jedoch Problem (s."filledTestPdf.pdf") 		
-		//		PDPage page = pdfDocument.getPage(0);
-		//		PDPageContentStream contentStream = new PDPageContentStream(pdfDocument,page);
-		//		contentStream.setFont(PDType1Font.TIMES_ROMAN, 25);
-
+		
 		if (acroForm != null) {
 
 			// Form Felder werden gefunden und ausgefüllt
@@ -67,14 +60,15 @@ public class CreatePdf {
 			((PDTextField) name).setDefaultAppearance("/HeBo 18 Tf 0 g");
 			//COSDictionary dict = ((PDField) monF).getDictionary();
 			
-			name.setValue("TollerNameHier");
-			monF.setValue(liste.get(0).getName());
-			tueF.setValue(liste.get(1).getName());
-			wedF.setValue(liste.get(2).getName());
-			thuF.setValue(liste.get(0).getName());
-			friF.setValue(liste.get(0).getName());
-			satF.setValue(liste.get(0).getName());
-			sunF.setValue(liste.get(0).getName()+"pustekuchen");
+			int lSize = liste.size();
+			name.setValue(petName);
+			monF.setValue(liste.get(0%lSize).getName() + "\n" + "\n" + "\n" + liste.get(3%lSize).getName());
+			tueF.setValue(liste.get(1%lSize).getName() + "\n"+ "\n" + "\n" + liste.get(4%lSize).getName());
+			wedF.setValue(liste.get(2%lSize).getName() + "\n"+ "\n" + "\n" + liste.get(5%lSize).getName());
+			thuF.setValue(liste.get(3%lSize).getName() + "\n"+ "\n" + "\n" + liste.get(6%lSize).getName());
+			friF.setValue(liste.get(4%lSize).getName() + "\n"+ "\n" + "\n" + liste.get(7%lSize).getName());
+			satF.setValue(liste.get(5%lSize).getName() + "\n"+ "\n" + "\n" + liste.get(8%lSize).getName());
+			sunF.setValue(liste.get(6%lSize).getName() + "\n" + "\n" + "\n"+ liste.get(9%lSize).getName());
 			
 		}
 
