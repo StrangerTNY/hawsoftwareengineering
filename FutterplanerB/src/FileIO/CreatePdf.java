@@ -50,14 +50,14 @@ public class CreatePdf {
 			PDField sunF = (PDField) acroForm.getField("sun");
 			PDField name = (PDField) acroForm.getField("name");
 			
-			((PDTextField) monF).setDefaultAppearance("/HeBo 18 Tf 0 g");
-			((PDTextField) tueF).setDefaultAppearance("/HeBo 18 Tf 0 g");
-			((PDTextField) wedF).setDefaultAppearance("/HeBo 18 Tf 0 g");
-			((PDTextField) thuF).setDefaultAppearance("/HeBo 18 Tf 0 g");
-			((PDTextField) friF).setDefaultAppearance("/HeBo 18 Tf 0 g");
-			((PDTextField) satF).setDefaultAppearance("/HeBo 18 Tf 0 g");
-			((PDTextField) sunF).setDefaultAppearance("/HeBo 18 Tf 0 g");
-			((PDTextField) name).setDefaultAppearance("/HeBo 18 Tf 0 g");
+			((PDTextField) monF).setDefaultAppearance("/HeBo 18 Tf 0.28 0.29 0.43 rg");
+			((PDTextField) tueF).setDefaultAppearance("/HeBo 18 Tf 0.28 0.29 0.43 rg");
+			((PDTextField) wedF).setDefaultAppearance("/HeBo 18 Tf 0.28 0.29 0.43 rg");
+			((PDTextField) thuF).setDefaultAppearance("/HeBo 18 Tf 0.28 0.29 0.43 rg");
+			((PDTextField) friF).setDefaultAppearance("/HeBo 18 Tf 0.28 0.29 0.43 rg");
+			((PDTextField) satF).setDefaultAppearance("/HeBo 18 Tf 0.28 0.29 0.43 rg");
+			((PDTextField) sunF).setDefaultAppearance("/HeBo 18 Tf 0.28 0.29 0.43 rg");
+			((PDTextField) name).setDefaultAppearance("/HeBo 18 Tf 0.28 0.29 0.43 rg");
 			//COSDictionary dict = ((PDField) monF).getDictionary();
 			
 			int lSize = liste.size();
